@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/Ikazuchi-san/nodejs-restful-api/issues"
   },
-  "homepage": "https://github.com/Ikazuchi-san/nodejs-restful-api#readme"
+  "homepage": "https://github.com/Ikazuchi-san/nodejs-restful-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
