@@ -9,12 +9,17 @@ app.use(express.json());
 app.get("/clients", function(req, res) {
     res.json(data);
 });
-app.get("/clients/:id", function(req, res) {});
+app.get("/clients/:id", function(req, res) {
+    const { id }  = req.params;
+    const client = data.find(cli => cli.id == id);
+
+    res.json(client);
+});
 app.post("/clients", function(req, res) {});
 app.put("/clients", function(req, res) {});
-app.put("/clients:id", function(req, res) {});
+app.put("/clients/:id", function(req, res) {});
 app.delete("/clients", function(req, res) {});
-app.delete("/clients:id", function(req, res) {});
+app.delete("/clients/:id", function(req, res) {});
 
 app.listen(5000, function(){
     console.log("Server is running");
