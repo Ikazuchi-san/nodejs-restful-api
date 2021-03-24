@@ -1,0 +1,28 @@
+{
+  "name": "rest-api",
+  "version": "0.1.0",
+  "description": "RESTFUL API interaction using NodeJs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ikazuchi-san/nodejs-restful-api.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "RESTFUL",
+    "API",
+    "API",
+    "JS",
+    "Javascript"
+  ],
+  "author": "Ikazuchi-san",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ikazuchi-san/nodejs-restful-api/issues"
+  },
+  "homepage": "https://github.com/Ikazuchi-san/nodejs-restful-api#readme"
+}
