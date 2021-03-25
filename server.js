@@ -1,4 +1,5 @@
 const express = require ('express');
+const res = require('express/lib/response');
 const app = express();
 const data = require('./data-example.json');
 
@@ -8,18 +9,39 @@ app.use(express.json());
 
 app.get("/clients", function(req, res) {
     res.json(data);
+
 });
 app.get("/clients/:id", function(req, res) {
     const { id }  = req.params;
     const client = data.find(cli => cli.id == id);
 
-    res.json(client);
+    return (!client) ? res.status(204).json(): res.json(client);    
+
 });
-app.post("/clients", function(req, res) {});
-app.put("/clients", function(req, res) {});
-app.put("/clients/:id", function(req, res) {});
-app.delete("/clients", function(req, res) {});
-app.delete("/clients/:id", function(req, res) {});
+app.post("/clients", function(req, res) {
+    const {name,email} = req.body;
+
+    // Save
+
+    res.json({name, email});
+
+});
+app.put("/clients/:id", function(req, res) {
+    const { id }  = req.params;
+    const client = data.find(cli => cli.id == id);
+
+    const {name} = req.body;
+    client.name = name;
+    return (!client) ? res.status(204).json(): res.json(client);
+
+});
+app.delete("/clients/:id", function(req, res) {
+    const { id } = req.params;
+    const clientsfiltered = data.filter(cli => cli.id != id);
+
+    res.json(clientsfiltered);
+    
+});
 
 app.listen(5000, function(){
     console.log("Server is running");
