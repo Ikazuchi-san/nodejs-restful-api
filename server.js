@@ -1,7 +1,7 @@
 const express = require ('express');
 const res = require('express/lib/response');
 const app = express();
-const data = require('./data-example.json');
+const data = require('./data/data-example.json');
 
 // for testing API client => https://jsonplaceholder.typicode.com/users
 
@@ -43,6 +43,8 @@ app.delete("/clients/:id", function(req, res) {
     
 });
 
-app.listen(5000, function(){
+
+
+app.listen(80, function(){
     console.log("Server is running");
 })
