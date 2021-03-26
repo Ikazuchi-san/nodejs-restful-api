@@ -43,8 +43,6 @@ app.delete("/clients/:id", function(req, res) {
     
 });
 
-
-
 app.listen(80, function(){
     console.log("Server is running");
 })
